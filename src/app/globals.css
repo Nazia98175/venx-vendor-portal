@@ -1,0 +1,429 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ededed;
+  border-radius: 15px;
+  height: auto;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #5a607f;
+  border-radius: 15px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0f3053;
+}
+
+@layer utilities {
+  .custom-shadow {
+    border-radius: 7187.5px;
+    background: #fff;
+    box-shadow: 0px 4px 18.6px 0px rgba(35, 68, 103, 0.05);
+  }
+}
+@layer base {
+  :root {
+    /* Custom colors */
+    --color-primary: #234467;
+    --color-secondary: #3b3b3b;
+    --color-quatanery: #c4c4c4;
+    --font-inter: "Inter", sans-serif;
+    --color-border: "#5A607F33";
+    --color-light: "#EDEDED1A";
+    --color-fade: "#FFFFFF0F";
+    --color-lavender: "#5A607F";
+
+    /* shadcn/ui required variables */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    @apply bg-white dark:bg-commodore  border-stone text-commodore  dark:text-white  dark:border-whitefade/20;
+  }
+
+  .main-page-style {
+    @apply grid grid-cols-1 lg:grid-cols-2 min-h-screen bg-white dark:bg-war;
+  }
+
+  .illustration-page-style {
+    @apply items-center max-w-full min-h-screen invisible lg:visible justify-center hidden lg:flex;
+  }
+  .input-style {
+    @apply w-full px-4 py-2 border border-quatanery rounded-sm
+           focus:outline-none focus:ring-2 focus:ring-commodore 
+           bg-white dark:bg-gray-800;
+  }
+  .auth-mainpage-style {
+    @apply bg-commodore  px-4 py-[116px] flex justify-center min-h-screen items-center w-full font-inter;
+  }
+
+  .auth-maincontainer-style {
+    @apply bg-white w-full max-w-[489px] pt-[95px] pb-[29px] px-2 lg:px-10 flex flex-col items-center border-transparent border justify-center rounded-2xl shadow-lg relative dark:border-white/20 dark:bg-white/10 dark:text-white;
+  }
+
+  .main-heading {
+    @apply text-center text-[22px] lg:text-[28px] font-semibold text-commodore  font-inter dark:text-white;
+  }
+
+  .input-label {
+    @apply text-secondary flex justify-between items-center font-normal text-sm lg:text-base font-inter dark:text-white;
+  }
+
+  .eyesvg-icon-style {
+    @apply absolute inset-y-0 right-3 flex items-center  dark:text-white;
+  }
+
+  .forgot-password-style {
+    @apply text-sm lg:text-base text-tangerine font-normal lg:font-medium float-right;
+  }
+
+  .otp-input-style {
+    @apply max-w-[50px] h-[40px] md:h-[45px] lg:h-[50px] w-full rounded-[4px] px-1 py-1 text-center  border border-quatanery  focus:outline-none focus:ring-2 focus:ring-commodore  dark:bg-commodore  dark:border-whitefade/20 dark:focus:ring-white/20 appearance-none;
+  }
+  .resend-otp-style {
+    @apply font-semibold mt-[10px] text-center text-tangerine;
+  }
+
+  .time-left-style {
+    @apply font-bold text-commodore  dark:text-white;
+  }
+
+  .para-resend-time {
+    @apply text-secondary text-center dark:text-white;
+  }
+
+  .resend-container-style {
+    @apply flex flex-col mt-6 text-center items-center justify-center;
+  }
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  .right-bottom-style {
+    @apply absolute p-0 dark:p-32 bg-commodore/70 blur-3xl right-32 -bottom-32  translate-x-1/2 z-0;
+  }
+
+  .left-bottom-style {
+    @apply absolute p-0 dark:p-32 bg-commodore/70 blur-3xl left-24 -bottom-36 translate-x-1/2 z-0;
+  }
+
+  .left-top-style {
+    @apply absolute p-0 dark:p-32 bg-commodore/70 blur-3xl -left-36  -bottom-6 translate-x-1/2 z-0;
+  }
+
+  .right-top-style {
+    @apply absolute p-0 dark:p-32 bg-commodore/70 blur-3xl right-0 -bottom-2 translate-x-1/2 z-0;
+  }
+
+  .dashboard-main-heading-style {
+    @apply text-xl lg:text-[24px]  text-secondary font-semibold z-10  dark:text-white;
+  }
+
+  .dashboard-main-heading-container {
+    @apply flex justify-between items-center mb-4;
+  }
+
+  .table-container-style {
+    @apply border-edgar/100 dark:text-violet bg-white dark:bg-fade/[6%] dark:border-edgar/20 px-2 lg:px-6 py-2 rounded-[16px] border-[1px] relative z-10 mb-20;
+  }
+
+  .date-picker-container-style {
+    @apply max-w-full flex justify-end  mb-4 mt-2;
+  }
+
+  .sales-chart-container-style {
+    @apply mt-[15px] lg:mt-[30px] mb-8 bg-white border-edgar/100 dark:text-white dark:bg-fade/[6%] dark:border-edgar/10 p-3 lg:p-5 rounded-xl border-[1px] relative z-10;
+  }
+  /* 
+  .status-card-container-style {
+    @apply flex flex-col md:flex-row  lg:flex-row flex-nowrap gap-3 md:gap-4 lg:gap-6;
+  } */
+  .status-card-container-style {
+    @apply grid md:grid-cols-2 lg:grid-cols-4 sm:grid-cols-2 gap-3 md:gap-4 lg:gap-6;
+  }
+
+  .stock-info-style {
+    @apply font-semibold text-sm md:text-base lg:text-base text-lavender;
+  }
+
+  .total-stock-container {
+    @apply flex justify-between items-center mt-4 px-0 lg:px-4 max-w-sm;
+  }
+
+  .total-percentage-instock-style {
+    @apply text-[28px] md:text-[35px] lg:text-[40px] font-bold;
+  }
+  .status-card-border-style {
+    @apply flex items-center justify-between bg-white rounded-xl w-full border-[1px] p-5 gap-0 lg:gap-0 xl:gap-[14px] overflow-hidden  border-whiteedgar dark:text-white dark:bg-fade/[6%] dark:border-edgar/10 relative;
+  }
+  .status-card-style {
+    @apply flex justify-between flex-col gap-2 relative z-10;
+  }
+  .status-card-title-style {
+    @apply text-lavender text-sm lg:text-base dark:text-white/80;
+  }
+  .status-card-count-style {
+    @apply text-lavender dark:text-white text-lg lg:text-2xl font-bold;
+  }
+  .status-card-icon-style {
+    @apply p-0 lg:p-3 rounded-xl relative z-10;
+  }
+  .pagination-container-style {
+    @apply border border-transparent dark:border-edgar/20 text-white dark:text-white rounded-lg;
+  }
+
+  .date-picker-container {
+    @apply flex items-center lg:justify-between justify-around gap-2 flex-wrap;
+  }
+
+  .date-picker-button-style {
+    @apply text-lavender dark:text-violet flex justify-between items-center w-auto text-left text-sm lg:text-base font-normal p-2 rounded-lg border border-moderate/20 dark:bg-fade/[6%] dark:border-edgar/20;
+  }
+
+  .sidebar-overlay-style {
+    @apply fixed inset-0  bg-black/10  z-40 w-full transition-all duration-300 ease-in-out;
+  }
+
+  .sidebar-container-style {
+    @apply min-w-[272px] w-[272px] bg-commodore  text-white rounded-none md:rounded-none lg:rounded-none xl:rounded-[14px] fixed lg:block xl:static top-0 shadow-lg transition-all z-50 duration-300 ease-in-out;
+  }
+
+  .status-card-dark-bg-style {
+    @apply dark:absolute p-0 dark:p-8 blur-2xl left-5 -bottom-10 translate-x-1/2 z-0;
+  }
+  .sidebar-logo-container-style {
+    @apply flex items-center bg-white/15 relative h-[82.84px] p-3 rounded-[16px] border-[#EDEDEDCC]/10 border;
+  }
+
+  .sidebar-link-container-style {
+    @apply flex flex-col overflow-auto mt-4 gap-1;
+  }
+
+  .sidebar-link-list-style {
+    @apply relative flex items-center gap-2 p-3 cursor-pointer rounded-lg;
+  }
+
+  .nav-container-style {
+    @apply flex justify-between items-center m-auto px-0 py-4 xl:py-5 md:px-2 lg:px-2 xl:px-2 mb-2 lg:mb-0 max-w-full relative z-10;
+  }
+
+  .dashboard-nav-list-style {
+    @apply flex items-center gap-0;
+  }
+  .dashboard-profile-menu-style {
+    @apply block lg:block xl:hidden text-lightgrey relative z-10;
+  }
+  .menu-style {
+    @apply hidden lg:block xl:hidden  text-lightgrey relative z-10;
+  }
+  .nav-menu-style {
+    @apply block lg:hidden xl:hidden  text-lightgrey relative z-10;
+  }
+  .nav-heading-style {
+    @apply text-lg md:text-xl lg:text-[28px] font-semibold text-secondary z-10 dark:text-white;
+  }
+
+  .profile-nav-list-style {
+    @apply flex items-center justify-between gap-2;
+  }
+  .dashboard-profile-img-style {
+    @apply block lg:block xl:hidden;
+  }
+  .nav-list-style {
+    @apply flex items-center gap-1;
+  }
+
+  .nav-list-container-style {
+    @apply hidden items-center lg:flex xl:hidden justify-between gap-2;
+  }
+  .nav-img-style {
+    @apply hidden lg:block xl:hidden;
+  }
+  .img-style {
+    @apply block lg:hidden xl:hidden;
+  }
+
+  .nav-aside-list-container {
+    @apply flex gap-3 md:gap-4 lg:gap-6 xl:gap-7 items-center relative z-10;
+  }
+
+  .theme-toggle-style {
+    @apply absolute -translate-x-1/2 -top-[1.40rem] left-4  md:left-3 lg:left-2 xl:left-1  border-0;
+  }
+
+  .notification-span-style {
+    @apply absolute top-1 -right-1 cursor-pointer bg-orange-500 text-white text-xs font-medium w-4 h-4 flex items-center justify-center rounded-full;
+  }
+
+  .nav-profile-img-style {
+    @apply w-8 h-8 md:w-9 md:h-9 lg:w-9 lg:h-9 xl:h-auto xl:w-auto;
+  }
+
+  .nav-profile-name-style {
+    @apply text-sm lg:text-base text-lavender dark:text-violet hidden lg:block;
+  }
+
+  .nav-profile-dropdown-style {
+    @apply bg-white shadow-lg rounded-lg p-2;
+  }
+  .profile-dropdown-hover-style {
+    @apply text-lavender hover:text-red-500;
+  }
+
+  .profile-modal-style {
+    @apply z-10 inline-flex items-center  justify-center lg:hidden w-fit p-[2px] rounded-md bg-transparent text-gray-700  dark:text-white focus:ring-2 focus:ring-primary  border border-lightgrey dark:bg-transparent  dark:border-lightgrey transition-all;
+  }
+
+  .search-svg-style {
+    @apply w-2 h-2 md:w-5 md:h-5 lg:w-6 lg:h-6;
+  }
+
+  .nav-input-style {
+    @apply w-full px-10 py-2 rounded-full text-lavender border border-lightgrey;
+  }
+
+  .voiceoption-svg-style {
+    @apply absolute inset-y-1 right-3 flex items-center cursor-pointer hover:opacity-70;
+  }
+  .nav-input-container {
+    @apply relative w-full z-10 rounded-full;
+  }
+
+  .dialog-search-input-container {
+    @apply flex flex-col max-w-[23rem] h-[20%] lg:h-auto lg:hidden items-center rounded-lg  bg-white dark:bg-war border border-gray-300 dark:border-edgar/20 shadow-lg dark:shadow-gray-800;
+  }
+
+  .dialog-search-style {
+    @apply max-w-full w-full px-10 py-2 border rounded-full  text-lavender dark:text-violet bg-gray-100 dark:border-whitefade/20 border-gray-300;
+  }
+
+  .notification-bold-style {
+    @apply font-medium lg:font-semibold text-lavender text-sm lg:text-base;
+  }
+
+  .settings-form-container-style {
+    @apply max-w-sm lg:max-w-md m-auto px-2 lg:px-6 py-6 flex  flex-col gap-2 mb-20;
+  }
+  .settings-input-label-form-container-style {
+    @apply flex flex-col lg:flex-row justify-between items-start lg:items-center whitespace-nowrap;
+  }
+  .settings-form-input-style {
+    @apply max-w-full lg:max-w-[18rem] w-full flex items-center flex-row-reverse justify-between px-4 py-2 border border-quatanery rounded-md focus:outline-none focus:ring-2 focus:ring-commodore  dark:bg-commodore  dark:border-whitefade/20 dark:focus:ring-white/20;
+  }
+  .settings-darkmode-switch-container {
+    @apply flex flex-col lg:flex-row gap-1 lg:gap-6 items-start lg:items-center whitespace-nowrap flex-nowrap;
+  }
+
+  .dialog-change-password-container-style {
+    @apply max-w-[23rem] md:max-w-sm lg:max-w-md bg-white border border-edgar/100 dark:border-edgar/20 dark:bg-gray-900 px-4 lg:px-8 py-4 rounded-lg shadow-lg;
+  }
+
+  .dialog-close-icon-style {
+    @apply absolute top-3 right-3 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300;
+  }
+
+  .change-password-form-container {
+    @apply grid grid-cols-3 items-center gap-2 lg:gap-4;
+  }
+
+  .change-password-label-style {
+    @apply col-span-1 flex flex-col text-right text-sm text-gray-700 dark:text-gray-300;
+  }
+
+  .change-password-input-style {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:focus:ring-white;
+  }
+
+  .another-change-password-label {
+    @apply col-span-1 flex flex-col text-right text-sm text-gray-700 dark:text-gray-300;
+  }
+
+  .another-change-password-input {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:focus:ring-white;
+  }
+
+  .profile-label-style {
+    @apply text-lavender dark:text-white;
+  }
+  .profile-input-style {
+    @apply text-dead/70 dark:text-violet;
+  }
+  .stock-register-popover-button {
+    @apply max-w-full flex-row-reverse justify-between lg:max-w-[22rem] w-full flex items-center px-4 py-2 border border-quatanery dark:bg-commodore rounded-md focus:outline-none focus:ring-2 focus:ring-primary  dark:border-[white]/20 dark:focus:ring-white/20 ring-offset-background focus:ring-offset-2;
+  }
+
+  .filter-popup-input-style {
+    @apply w-full px-7 py-2 rounded-full text-sm text-lavender dark:text-white border border-edgar dark:border-whitefade/20 dark:bg-darkblue;
+  }
+
+  .filter-popup-button-style {
+    @apply w-full text-left px-[14px] py-2 text-sm lg:text-base hover:bg-gray-100 dark:hover:bg-sharp border-b dark:border-white/20 border-moderate/20;
+  }
+
+  .addlogistics-input-style {
+    @apply max-w-full lg:max-w-[22rem] w-full flex items-center flex-row-reverse justify-between px-4 py-2 border border-quatanery rounded-md focus:outline-none focus:ring-2 focus:ring-commodore  dark:bg-commodore  dark:border-whitefade/20 dark:focus:ring-white/20;
+  }
+
+  .illustration-dark-bg-left-bottom-style {
+    @apply absolute p-0 dark:p-32 bg-commodore/70 blur-3xl -left-36  bottom-0 translate-x-1/2 z-0;
+  }
+  .illustration-dark-bg-left-top-style {
+    @apply absolute p-0 dark:p-32 bg-commodore/70 blur-3xl -left-36  top-0 translate-x-1/2 z-0;
+  }
+}
